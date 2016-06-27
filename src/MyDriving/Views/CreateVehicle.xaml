@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <Style x:Key="ButtonStyle1" TargetType="Button">
+        <Style x:Key="AddPhotoButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}"/>
             <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
             <Setter Property="BorderBrush" Value="{ThemeResource SystemControlForegroundTransparentBrush}"/>
@@ -76,7 +76,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="NOWY POJAZD" FontSize="{ThemeResource TextStyleLargeFontSize}" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <Button x:Name="button" Content="Dodaj zdjęcie" Grid.Row="1" Style="{StaticResource ButtonStyle1}" Margin="10,10,0,10"/>
+        <Button x:Name="button" Content="Dodaj zdjęcie" Grid.Row="1" Style="{StaticResource AddPhotoButtonStyle}" Margin="10,10,0,10"/>
         <Ellipse Grid.Row="1" Stroke="White" Width="120" Height="120" HorizontalAlignment="Left" Margin="10,10,0,10" d:IsHidden="True"/>
         <ScrollViewer Grid.Row="2" Margin="10">
             <Grid>
