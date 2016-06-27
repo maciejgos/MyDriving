@@ -101,7 +101,7 @@
       <DependentUpon>20160627161647_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
-    <Compile Include="Model\Vehicle.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Views\CreateVehicle.xaml.cs">
       <DependentUpon>CreateVehicle.xaml</DependentUpon>
     </Compile>

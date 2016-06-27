@@ -25,6 +25,19 @@ namespace MyDriving.Views
         public MainPage()
         {
             this.InitializeComponent();
+
+            System.Collections.Generic.List<Models.Vehicle> collection = new List<Models.Vehicle>();
+            using (var context = new Data.AppDbContext())
+            {
+                collection = context.Vehicles.ToList();
+            }
+
+            listViewVeh.ItemsSource = collection;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CreateVehicle));
         }
     }
 }

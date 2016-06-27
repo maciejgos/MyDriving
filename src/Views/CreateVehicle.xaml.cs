@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,41 @@ namespace MyDriving.Views
         public CreateVehicle()
         {
             this.InitializeComponent();
+            SystemNavigationManager.GetForCurrentView().BackRequested += CreateVehicle_BackRequested;
+        }
+
+        private void CreateVehicle_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame frame = Window.Current.Content as Frame;
+            if (frame.CanGoBack)
+            {
+                frame.GoBack();
+                e.Handled = true;
+            }
+        }
+
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            var entity = new Models.Vehicle
+            {
+                Make = "Toyota",
+                Model = "Corolla",
+                ProductionYear = 2004,
+                Mileage = 198000
+            };
+
+            using (var context = new Data.AppDbContext())
+            {
+                context.Vehicles.Add(entity);
+                await context.SaveChangesAsync();
+            }
+
+
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -2,9 +2,9 @@
 
 namespace MyDriving.Data
 {
-    public class AppDbContext : DbContext
+    class AppDbContext : DbContext
     {
-        public DbSet<Model.Vehicle> Vehicles { get; set; }
+        public DbSet<Models.Vehicle> Vehicles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
