@@ -102,6 +102,8 @@
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\VehicleRepository.cs" />
     <Compile Include="Views\CreateVehicle.xaml.cs">
       <DependentUpon>CreateVehicle.xaml</DependentUpon>
