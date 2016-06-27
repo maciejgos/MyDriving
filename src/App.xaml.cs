@@ -32,10 +32,10 @@ namespace MyDriving
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            using (var context = new Data.AppDbContext())
-            {
-                context.Database.Migrate();
-            }
+            
+            
+          Data.AppDbContext.Instance.Database.Migrate();
+           
         }
 
         /// <summary>

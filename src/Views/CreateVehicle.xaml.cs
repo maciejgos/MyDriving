@@ -49,11 +49,14 @@ namespace MyDriving.Views
                 Mileage = 198000
             };
 
-            using (var context = new Data.AppDbContext())
+            /*using (var context = new Data.AppDbContext())
             {
                 context.Vehicles.Add(entity);
                 await context.SaveChangesAsync();
-            }
+            }*/
+
+            Data.AppDbContext.Instance.Vehicles.Add(entity);
+            await Data.AppDbContext.Instance.SaveChangesAsync();
 
 
         }

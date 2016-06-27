@@ -27,10 +27,7 @@ namespace MyDriving.Views
             this.InitializeComponent();
 
             System.Collections.Generic.List<Models.Vehicle> collection = new List<Models.Vehicle>();
-            using (var context = new Data.AppDbContext())
-            {
-                collection = context.Vehicles.ToList();
-            }
+            collection = Data.AppDbContext.Instance.Vehicles.ToList();
 
             listViewVeh.ItemsSource = collection;
         }
