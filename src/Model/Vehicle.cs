@@ -1,6 +1,6 @@
 ﻿namespace MyDriving.Model
 {
-    class Vehicle
+    public class Vehicle
     {
         public int Id { get; set; }
 
