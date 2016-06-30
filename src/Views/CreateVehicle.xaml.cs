@@ -41,19 +41,14 @@ namespace MyDriving.Views
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            //TODO: Validate input
             var entity = new Models.Vehicle
             {
-                Make = "Toyota",
-                Model = "Corolla",
-                ProductionYear = 2004,
-                Mileage = 198000
+                Make = textBoxMake.Text,
+                Model = textBoxModel.Text,
+                ProductionYear = int.Parse(textBoxAge.Text),
+                Mileage = int.Parse(textBoxMileage.Text)
             };
-
-            /*using (var context = new Data.AppDbContext())
-            {
-                context.Vehicles.Add(entity);
-                await context.SaveChangesAsync();
-            }*/
 
             Data.AppDbContext.Instance.Vehicles.Add(entity);
             await Data.AppDbContext.Instance.SaveChangesAsync();
