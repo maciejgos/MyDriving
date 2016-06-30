@@ -13,8 +13,11 @@ namespace MyDriving.Repositories
             return AppDbContext.Instance.Vehicles.FirstOrDefault(v => v.Id == id);
         }
 
-        public IEnumerable<Vehicle> GetAll(Func<Vehicle,bool> predicate)
+        public IEnumerable<Vehicle> GetAll(Func<Vehicle,bool> predicate = null)
         {
+            if (predicate == null)
+                return AppDbContext.Instance.Vehicles.ToList();
+
             return AppDbContext.Instance.Vehicles.Where(predicate);
         }
 

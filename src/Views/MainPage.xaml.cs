@@ -22,6 +22,16 @@ namespace MyDriving.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Repositories.VehicleRepository repository = new Repositories.VehicleRepository();
+
+        public IEnumerable<Models.Vehicle> Vehicles
+        {
+            get
+            {
+                return repository.GetAll();
+            }
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
