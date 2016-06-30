@@ -12,9 +12,12 @@
     </Page.Resources>
     <Page.BottomAppBar>
         <CommandBar>
-            <CommandBar.Content>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings" />
+            </CommandBar.SecondaryCommands>
+            <!--<CommandBar.Content>
                 <Grid/>
-            </CommandBar.Content>
+            </CommandBar.Content>-->
             <AppBarButton x:Name="AddVehicle" Icon="Add" Label="Add vehicle" Click="AddVehicle_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
@@ -29,7 +32,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Ellipse Width="100" Height="100" Stroke="White" />
-                        <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                        <StackPanel Grid.Column="2" Margin="10, 0,0,0">
                             <TextBlock Text="{x:Bind Make}" FontWeight="Bold" />
                             <TextBlock Text="{x:Bind Model}" />
                         </StackPanel>
