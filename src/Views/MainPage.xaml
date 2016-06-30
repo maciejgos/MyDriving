@@ -22,8 +22,13 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{x:Bind Vehicles}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{x:Bind Vehicles}" Grid.Row="3">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Vehicle">
                     <Grid Margin="10">
@@ -40,5 +45,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackPanel>
+        <TextBlock TextWrapping="Wrap" Text="Vehicles" Margin="10"/>
+        <TextBox Grid.Row="1" TextWrapping="Wrap" Text="" Margin="10" PlaceholderText="Search"/>
+    </Grid>
 </Page>
