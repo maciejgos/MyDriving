@@ -45,6 +45,7 @@ namespace MyDriving.Views
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var obj = e.ClickedItem as Models.Vehicle;
+            Frame.Navigate(typeof(DetailsPage), obj, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
         }
     }
 }
