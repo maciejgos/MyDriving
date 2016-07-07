@@ -28,7 +28,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{x:Bind Vehicles}" Grid.Row="3">
+        <ListView ItemsSource="{x:Bind Vehicles}" Grid.Row="3" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Vehicle">
                     <Grid Margin="10">

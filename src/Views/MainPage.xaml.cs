@@ -41,5 +41,10 @@ namespace MyDriving.Views
         {
             Frame.Navigate(typeof(CreateVehicle));
         }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var obj = e.ClickedItem as Models.Vehicle;
+        }
     }
 }

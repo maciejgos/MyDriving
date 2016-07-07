@@ -111,6 +111,9 @@
     <Compile Include="Views\CreateVehicle.xaml.cs">
       <DependentUpon>CreateVehicle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DetailsPage.xaml.cs">
+      <DependentUpon>DetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Views\CreateVehicle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
