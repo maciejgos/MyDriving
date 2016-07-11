@@ -19,11 +19,13 @@ namespace MyDriving.Data
 
         public DbSet<Models.Vehicle> Vehicles { get; set; }
 
+        public DbSet<Models.Fuelling> Fuellings { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=MyDriving.db");
         }
 
-        private AppDbContext() { }
+        public AppDbContext() { }
     }
 }

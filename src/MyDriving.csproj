@@ -103,7 +103,12 @@
     <Compile Include="Migrations\20160627161647_InitialMigration.designer.cs">
       <DependentUpon>20160627161647_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20160711181402_FuelMigration.cs" />
+    <Compile Include="Migrations\20160711181402_FuelMigration.designer.cs">
+      <DependentUpon>20160711181402_FuelMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
+    <Compile Include="Models\Fuelling.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />

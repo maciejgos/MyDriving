@@ -1,4 +1,6 @@
-﻿namespace MyDriving.Models
+﻿using System.Collections.Generic;
+
+namespace MyDriving.Models
 {
     public class Vehicle
     {
@@ -11,5 +13,7 @@
         public int ProductionYear { get; set; }
 
         public int Mileage { get; set; }
+
+        public virtual ICollection<Fuelling> Fuellings { get; set; }
     }
 }
