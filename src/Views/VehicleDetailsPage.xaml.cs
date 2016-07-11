@@ -23,6 +23,8 @@ namespace MyDriving.Views
     /// </summary>
     public sealed partial class VehicleDetailsPage : Page
     {
+        Models.Vehicle model;
+
         public VehicleDetailsPage()
         {
             this.InitializeComponent();
@@ -33,8 +35,8 @@ namespace MyDriving.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            var obj = e.Parameter as Models.Vehicle;
-            var dialog = new Windows.UI.Popups.MessageDialog($"{obj.Make} {obj.Model}").ShowAsync();
+            model = e.Parameter as Models.Vehicle;
+            var dialog = new Windows.UI.Popups.MessageDialog($"{model.Make} {model.Model}").ShowAsync();
 
             base.OnNavigatedTo(e);
         }
@@ -47,6 +49,21 @@ namespace MyDriving.Views
                 frame.GoBack();
                 e.Handled = true;
             }
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddFullingButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(AddFuellingPage), model);
         }
     }
 }

@@ -22,14 +22,26 @@ namespace MyDriving.Views
     /// </summary>
     public sealed partial class AddFuellingPage : Page
     {
+        Models.Vehicle model;
+
         public AddFuellingPage()
         {
             this.InitializeComponent();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            throw new NotImplementedException();
+            model = e.Parameter as Models.Vehicle;
+            base.OnNavigatedTo(e);
+        }
+
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Models.Fuelling newFuelling = new Models.Fuelling { Liters = 10, Mileage = 200000, Price = 100.00m, PricePerLiter = 10.00m };
+            model.Fuellings.Add(newFuelling);
+
+            Data.AppDbContext.Instance.Fuellings.Add(newFuelling);
+            await Data.AppDbContext.Instance.SaveChangesAsync();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

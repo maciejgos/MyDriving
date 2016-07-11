@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace MyDriving.Models
 {
@@ -15,5 +16,10 @@ namespace MyDriving.Models
         public int Mileage { get; set; }
 
         public virtual ICollection<Fuelling> Fuellings { get; set; }
+
+        public Vehicle()
+        {
+            Fuellings = Enumerable.Empty<Fuelling>().ToList();
+        }
     }
 }
