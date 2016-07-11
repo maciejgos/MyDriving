@@ -9,5 +9,7 @@
         public int Liters { get; set; }
 
         public decimal PricePerLiter { get; set; }
+
+        public int Mileage { get; set; }
     }
 }

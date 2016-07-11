@@ -107,12 +107,19 @@
     <Compile Include="Migrations\20160711181402_FuelMigration.designer.cs">
       <DependentUpon>20160711181402_FuelMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20160711182625_AddMileageFieldMigration.cs" />
+    <Compile Include="Migrations\20160711182625_AddMileageFieldMigration.designer.cs">
+      <DependentUpon>20160711182625_AddMileageFieldMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Fuelling.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\VehicleRepository.cs" />
+    <Compile Include="Views\AddFuellingPage.xaml.cs">
+      <DependentUpon>AddFuellingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateVehiclePage.xaml.cs">
       <DependentUpon>CreateVehiclePage.xaml</DependentUpon>
     </Compile>
@@ -146,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\AddFuellingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateVehiclePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

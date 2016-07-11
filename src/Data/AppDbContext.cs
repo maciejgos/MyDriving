@@ -2,6 +2,7 @@
 
 namespace MyDriving.Data
 {
+    //TODO: Remove singleton due to issue with param less AppDbContext constructor
     class AppDbContext : DbContext
     {
         private static AppDbContext instance;
