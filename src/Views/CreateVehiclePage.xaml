@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="MyDriving.Views.CreateVehicle"
+    x:Class="MyDriving.Views.CreateVehiclePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MyDriving.Views"

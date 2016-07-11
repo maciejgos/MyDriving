@@ -39,7 +39,7 @@ namespace MyDriving.Views
 
         private void AddVehicle_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(CreateVehicle));
+            Frame.Navigate(typeof(CreateVehiclePage));
         }
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)

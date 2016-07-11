@@ -108,8 +108,8 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\VehicleRepository.cs" />
-    <Compile Include="Views\CreateVehicle.xaml.cs">
-      <DependentUpon>CreateVehicle.xaml</DependentUpon>
+    <Compile Include="Views\CreateVehiclePage.xaml.cs">
+      <DependentUpon>CreateVehiclePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailsPage.xaml.cs">
       <DependentUpon>DetailsPage.xaml</DependentUpon>
@@ -141,7 +141,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\CreateVehicle.xaml">
+    <Page Include="Views\CreateVehiclePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
