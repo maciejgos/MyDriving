@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,9 @@ namespace MyDriving.Views
         public DetailsPage()
         {
             this.InitializeComponent();
+
+            SystemNavigationManager.GetForCurrentView().BackRequested += DetailsPage_BackRequested;
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -33,6 +37,16 @@ namespace MyDriving.Views
             var dialog = new Windows.UI.Popups.MessageDialog($"{obj.Make} {obj.Model}").ShowAsync();
 
             base.OnNavigatedTo(e);
+        }
+
+        private void DetailsPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame frame = Window.Current.Content as Frame;
+            if (frame.CanGoBack)
+            {
+                frame.GoBack();
+                e.Handled = true;
+            }
         }
     }
 }
