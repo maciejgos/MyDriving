@@ -25,6 +25,14 @@ namespace MyDriving.Views
     {
         Models.Vehicle model;
 
+        public IEnumerable<Models.Fuelling> Fuellings
+        {
+            get
+            {
+                return model.Fuellings;
+            }
+        }
+
         public VehicleDetailsPage()
         {
             this.InitializeComponent();
