@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDriving", "MyDriving.csproj", "{5F9296F4-9743-4408-AE49-4E5AA860BA14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDriving.UnitTest.Core", "..\MyDriving.UnitTest.Core\MyDriving.UnitTest.Core.csproj", "{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,24 @@ Global
 		{5F9296F4-9743-4408-AE49-4E5AA860BA14}.Release|x86.ActiveCfg = Release|x86
 		{5F9296F4-9743-4408-AE49-4E5AA860BA14}.Release|x86.Build.0 = Release|x86
 		{5F9296F4-9743-4408-AE49-4E5AA860BA14}.Release|x86.Deploy.0 = Release|x86
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|ARM.Build.0 = Debug|ARM
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|x64.ActiveCfg = Debug|x64
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|x64.Build.0 = Debug|x64
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|x64.Deploy.0 = Debug|x64
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|x86.ActiveCfg = Debug|x86
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|x86.Build.0 = Debug|x86
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Debug|x86.Deploy.0 = Debug|x86
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|ARM.ActiveCfg = Release|ARM
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|ARM.Build.0 = Release|ARM
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|ARM.Deploy.0 = Release|ARM
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|x64.ActiveCfg = Release|x64
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|x64.Build.0 = Release|x64
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|x64.Deploy.0 = Release|x64
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|x86.ActiveCfg = Release|x86
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|x86.Build.0 = Release|x86
+		{A9EAB2AF-78EA-4D1B-AC60-C139FE0F40B3}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
