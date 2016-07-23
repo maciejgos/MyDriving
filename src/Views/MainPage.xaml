@@ -13,7 +13,7 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings" />
+                <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings" Click="SettingsButton_Click" />
             </CommandBar.SecondaryCommands>
             <!--<CommandBar.Content>
                 <Grid/>

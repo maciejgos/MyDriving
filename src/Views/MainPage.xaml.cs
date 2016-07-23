@@ -47,5 +47,10 @@ namespace MyDriving.Views
             var obj = e.ClickedItem as Models.Vehicle;
             Frame.Navigate(typeof(VehicleDetailsPage), obj, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
         }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

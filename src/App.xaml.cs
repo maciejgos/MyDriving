@@ -31,8 +31,7 @@ namespace MyDriving
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-
-            
+            this.UnhandledException += App_UnhandledException;            
             
           Data.AppDbContext.Instance.Database.Migrate();
            
@@ -107,6 +106,12 @@ namespace MyDriving
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            var dialog = new Windows.UI.Popups.MessageDialog(e.Message).ShowAsync();
+            e.Handled = true;
         }
     }
 }
