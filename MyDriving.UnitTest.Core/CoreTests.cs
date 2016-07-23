@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MyDriving.UnitTest.Core
 {
@@ -38,10 +37,13 @@ namespace MyDriving.UnitTest.Core
             Assert.AreEqual(9.5m, average);
         }
 
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethod]
+        [TestMethod]
         public void ShouldBlockCalculationWhenThereIsNotEnougthRefuel()
         {
+            IEnumerable<Models.Fuelling> collection = System.Linq.Enumerable.Empty<Models.Fuelling>();
+            MyDriving.Core.CalculationEngine.Calculate(collection);
 
+            Assert.ThrowsException<ArgumentException>(() => "Just a test");
         }
     }
 }

@@ -7,6 +7,7 @@ namespace MyDriving.Core
 {
     public class CalculationEngine
     {
+        //TODO: Consider maybe algorithm rewrite
         public static decimal Calculate(IEnumerable<Fuelling> collection)
         {
             decimal result = 0.0m;
