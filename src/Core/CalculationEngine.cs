@@ -10,6 +10,9 @@ namespace MyDriving.Core
         //TODO: Consider maybe algorithm rewrite
         public static decimal Calculate(IEnumerable<Fuelling> collection)
         {
+            if (collection.Count() < 2)
+                throw new ArgumentException("Not enough refuell");
+
             decimal result = 0.0m;
             var orderedCollection = collection.OrderByDescending(item => item.Id);
             var arr = orderedCollection.Take(2).ToArray();
