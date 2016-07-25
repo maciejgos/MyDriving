@@ -53,12 +53,12 @@ namespace MyDriving.Views
             Data.AppDbContext.Instance.Vehicles.Add(entity);
             await Data.AppDbContext.Instance.SaveChangesAsync();
 
-
+            Frame.GoBack();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.GoBack();
         }
     }
 }
