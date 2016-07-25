@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDriving", "MyDriving.csproj", "{5F9296F4-9743-4408-AE49-4E5AA860BA14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDriving.UnitTest.Core", "UnitTests\MyDriving.UnitTest.Core\MyDriving.UnitTest.Core.csproj", "{1E57C149-756A-4B9C-A926-A4443030AD0C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -35,24 +33,6 @@ Global
 		{5F9296F4-9743-4408-AE49-4E5AA860BA14}.Release|x86.ActiveCfg = Release|x86
 		{5F9296F4-9743-4408-AE49-4E5AA860BA14}.Release|x86.Build.0 = Release|x86
 		{5F9296F4-9743-4408-AE49-4E5AA860BA14}.Release|x86.Deploy.0 = Release|x86
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|ARM.ActiveCfg = Debug|ARM
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|ARM.Build.0 = Debug|ARM
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|ARM.Deploy.0 = Debug|ARM
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|x64.ActiveCfg = Debug|x64
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|x64.Build.0 = Debug|x64
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|x64.Deploy.0 = Debug|x64
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|x86.ActiveCfg = Debug|x86
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|x86.Build.0 = Debug|x86
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Debug|x86.Deploy.0 = Debug|x86
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|ARM.ActiveCfg = Release|ARM
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|ARM.Build.0 = Release|ARM
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|ARM.Deploy.0 = Release|ARM
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|x64.ActiveCfg = Release|x64
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|x64.Build.0 = Release|x64
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|x64.Deploy.0 = Release|x64
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|x86.ActiveCfg = Release|x86
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|x86.Build.0 = Release|x86
-		{1E57C149-756A-4B9C-A926-A4443030AD0C}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
