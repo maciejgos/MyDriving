@@ -73,5 +73,10 @@ namespace MyDriving.Views
         {
             Frame.Navigate(typeof(AddFuellingPage), model);
         }
+
+        private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

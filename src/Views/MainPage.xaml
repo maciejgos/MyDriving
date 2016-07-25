@@ -15,9 +15,6 @@
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings" Click="SettingsButton_Click" />
             </CommandBar.SecondaryCommands>
-            <!--<CommandBar.Content>
-                <Grid/>
-            </CommandBar.Content>-->
             <AppBarButton x:Name="AddVehicle" Icon="Add" Label="Add vehicle" Click="AddVehicle_Click"/>
         </CommandBar>
     </Page.BottomAppBar>

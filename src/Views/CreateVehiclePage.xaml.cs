@@ -44,10 +44,10 @@ namespace MyDriving.Views
             //TODO: Validate input
             var entity = new Models.Vehicle
             {
-                Make = textBoxMake.Text,
-                Model = textBoxModel.Text,
-                ProductionYear = int.Parse(textBoxAge.Text),
-                Mileage = int.Parse(textBoxMileage.Text)
+                Make = TextBoxMake.Text,
+                Model = TextBoxModel.Text,
+                ProductionYear = int.Parse(TextBoxAge.Text),
+                Mileage = int.Parse(TextBoxMileage.Text)
             };
 
             Data.AppDbContext.Instance.Vehicles.Add(entity);
