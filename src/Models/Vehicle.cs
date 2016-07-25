@@ -15,11 +15,11 @@ namespace MyDriving.Models
 
         public int Mileage { get; set; }
 
-        public virtual ICollection<Fuelling> Fuellings { get; set; }
+        public virtual ICollection<Refuel> Fuellings { get; set; }
 
         public Vehicle()
         {
-            Fuellings = Enumerable.Empty<Fuelling>().ToList();
+            Fuellings = Enumerable.Empty<Refuel>().ToList();
         }
     }
 }

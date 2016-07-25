@@ -113,7 +113,7 @@
       <DependentUpon>20160711182625_AddMileageFieldMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
-    <Compile Include="Models\Fuelling.cs" />
+    <Compile Include="Models\Refuel.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />

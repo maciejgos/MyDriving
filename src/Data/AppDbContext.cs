@@ -20,7 +20,7 @@ namespace MyDriving.Data
 
         public DbSet<Models.Vehicle> Vehicles { get; set; }
 
-        public DbSet<Models.Fuelling> Fuellings { get; set; }
+        public DbSet<Models.Refuel> Fuellings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -104,7 +104,7 @@
                 <StackPanel BorderBrush="WhiteSmoke" Margin="0,0,0,10" Grid.Row="4">
                     <ListView ItemsSource="{x:Bind Fuellings}" Grid.Row="3">
                         <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="model:Fuelling">
+                            <DataTemplate x:DataType="model:Refuel">
                                 <Grid Margin="10">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100" />

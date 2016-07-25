@@ -1,6 +1,6 @@
 ﻿namespace MyDriving.Models
 {
-    public class Fuelling
+    public class Refuel
     {
         public int Id { get; set; }
 

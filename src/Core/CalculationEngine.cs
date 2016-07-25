@@ -8,7 +8,7 @@ namespace MyDriving.Core
     public class CalculationEngine
     {
         //TODO: Consider maybe algorithm rewrite
-        public static decimal Calculate(IEnumerable<Fuelling> collection)
+        public static decimal Calculate(IEnumerable<Refuel> collection)
         {
             if (collection.Count() < 2)
                 throw new ArgumentException("Not enough refuell");

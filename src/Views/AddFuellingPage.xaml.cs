@@ -37,7 +37,7 @@ namespace MyDriving.Views
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            Models.Fuelling newFuelling = new Models.Fuelling { Liters = 10, Mileage = 200000, Price = 100.00m, PricePerLiter = 10.00m };
+            Models.Refuel newFuelling = new Models.Refuel { Liters = 10, Mileage = 200000, Price = 100.00m, PricePerLiter = 10.00m };
             model.Fuellings.Add(newFuelling);
 
             Data.AppDbContext.Instance.Fuellings.Add(newFuelling);

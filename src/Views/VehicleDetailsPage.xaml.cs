@@ -25,7 +25,7 @@ namespace MyDriving.Views
     {
         Models.Vehicle model;
 
-        public IEnumerable<Models.Fuelling> Fuellings
+        public IEnumerable<Models.Refuel> Fuellings
         {
             get
             {
