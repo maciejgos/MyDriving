@@ -60,5 +60,10 @@ namespace MyDriving.Views
         {
             Frame.GoBack();
         }
+
+        private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
