@@ -118,6 +118,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\VehicleRepository.cs" />
+    <Compile Include="ViewModels\CreateVechicleViewModel.cs" />
     <Compile Include="Views\AddFuellingPage.xaml.cs">
       <DependentUpon>AddFuellingPage.xaml</DependentUpon>
     </Compile>
@@ -171,9 +172,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
