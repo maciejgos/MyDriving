@@ -63,7 +63,7 @@ namespace MyDriving.Views
 
         private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
         {
-
+            throw new NotImplementedException();
         }
     }
 }
