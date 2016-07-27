@@ -31,10 +31,10 @@ namespace MyDriving
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            this.UnhandledException += App_UnhandledException;            
-            
-          Data.AppDbContext.Instance.Database.Migrate();
-           
+            this.UnhandledException += App_UnhandledException;
+
+            Data.AppDbContext.Instance.Database.Migrate();
+
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace MyDriving
 
         private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            var dialog = new Windows.UI.Popups.MessageDialog(e.Message).ShowAsync();
+            var dialog = new Windows.UI.Popups.MessageDialog("Feature is not supported now.").ShowAsync();
             e.Handled = true;
         }
     }
