@@ -1,13 +1,12 @@
-﻿using System;
-using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using MyDriving.Models;
 using MyDriving.Core.Repositories;
 using MyDriving.ViewModels;
-using MyDriving.Views;
 using System.Collections.Generic;
 using MyDriving.Core.Calculators;
+using MyDriving.Extensions;
 
 namespace MyDriving
 {
@@ -32,8 +31,7 @@ namespace MyDriving
         static ViewModelLocator()
         {
             var navigationService = new NavigationService();
-            navigationService.Configure("MainPage", typeof(MainPage));
-            navigationService.Configure("CreateVehiclePage", typeof(CreateVehiclePage));
+            navigationService.ConfigureRoutes();
 
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
