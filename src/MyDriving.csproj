@@ -98,7 +98,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Core\CalculationEngine.cs" />
+    <Compile Include="Core\Calculators\CalculationEngine.cs" />
+    <Compile Include="Core\Calculators\ICalculation.cs" />
     <Compile Include="Core\Data\AppDbContext.cs" />
     <Compile Include="Migrations\20160627161647_InitialMigration.cs" />
     <Compile Include="Migrations\20160627161647_InitialMigration.designer.cs">

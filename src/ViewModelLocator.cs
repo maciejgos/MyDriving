@@ -6,6 +6,8 @@ using MyDriving.Models;
 using MyDriving.Core.Repositories;
 using MyDriving.ViewModels;
 using MyDriving.Views;
+using System.Collections.Generic;
+using MyDriving.Core.Calculators;
 
 namespace MyDriving
 {
@@ -37,6 +39,7 @@ namespace MyDriving
 
             SimpleIoc.Default.Register<INavigationService>(() => navigationService);
             SimpleIoc.Default.Register<IRepository<Vehicle>>(() => new VehicleRepository());
+            SimpleIoc.Default.Register<ICalculation<IEnumerable<Refuel>,decimal>>(() => new FuelConsumptionCalculationEngine());
 
             SimpleIoc.Default.Register<CreateVechicleViewModel>();
             SimpleIoc.Default.Register<MainPageViewModel>();

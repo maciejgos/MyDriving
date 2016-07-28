@@ -1,8 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
-using MyDriving.Models;
 using MyDriving.Core.Repositories;
+using MyDriving.Models;
 using System.Collections.ObjectModel;
 
 namespace MyDriving.ViewModels
@@ -18,13 +18,13 @@ namespace MyDriving.ViewModels
 
         public MainPageViewModel(INavigationService navigationService, IRepository<Vehicle> repository)
         {
-            this._navigationService = navigationService;
-            this._repository = repository;
+            _navigationService = navigationService;
+            _repository = repository;
 
-            var result = this._repository.GetAll();
+            var result = _repository.GetAll();
             Vehicles = Vehicles ?? new ObservableCollection<Vehicle>(result);
 
-            AddVehicleCommand = AddVehicleCommand ?? new RelayCommand(() => this._navigationService.NavigateTo("CreateVehiclePage"));
+            AddVehicleCommand = AddVehicleCommand ?? new RelayCommand(() => _navigationService.NavigateTo("CreateVehiclePage"));
         }
     }
 }
