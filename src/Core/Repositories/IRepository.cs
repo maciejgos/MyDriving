@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using MyDriving.Models;
 
-namespace MyDriving.Repositories
+namespace MyDriving.Core.Repositories
 {
     public interface IRepository<T> where T : class
     {

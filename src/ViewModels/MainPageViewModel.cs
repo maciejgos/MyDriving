@@ -2,7 +2,7 @@
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using MyDriving.Models;
-using MyDriving.Repositories;
+using MyDriving.Core.Repositories;
 using System.Collections.ObjectModel;
 
 namespace MyDriving.ViewModels

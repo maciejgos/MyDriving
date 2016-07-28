@@ -40,8 +40,8 @@ namespace MyDriving.Views
             Models.Refuel newFuelling = new Models.Refuel { Liters = 10, Mileage = 200000, Price = 100.00m, PricePerLiter = 10.00m };
             model.Fuellings.Add(newFuelling);
 
-            Data.AppDbContext.Instance.Fuellings.Add(newFuelling);
-            await Data.AppDbContext.Instance.SaveChangesAsync();
+            Core.Data.AppDbContext.Instance.Fuellings.Add(newFuelling);
+            await Core.Data.AppDbContext.Instance.SaveChangesAsync();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

@@ -2,12 +2,15 @@
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using System;
+using MyDriving.Core.Repositories;
+using MyDriving.Models;
 
 namespace MyDriving.ViewModels
 {
     public class CreateVechicleViewModel : ViewModelBase
     {
-        private INavigationService navigationService;
+        private readonly IRepository<Vehicle> _repository;
+        private INavigationService _navigationService;
 
         public string Make { get; set; }
 
@@ -23,9 +26,10 @@ namespace MyDriving.ViewModels
 
         public RelayCommand CancelCommand { get; }
 
-        public CreateVechicleViewModel(INavigationService navigationService)
+        public CreateVechicleViewModel(INavigationService navigationService, IRepository<Vehicle> repository)
         {
-            this.navigationService = navigationService;
+            this._navigationService = navigationService;
+            this._repository = repository;
 
             AddPhotoCommand = new RelayCommand(() => 
             {
@@ -42,15 +46,15 @@ namespace MyDriving.ViewModels
             SaveCommand = new RelayCommand(() => 
             {
                 var entity = ToModel();
-                Data.AppDbContext.Instance.Vehicles.Add(entity);
-                Data.AppDbContext.Instance.SaveChanges();
+
+                _repository.Add(entity);
 
                 //TODO: Navigate to main page when save is success
                 navigationService.NavigateTo("MainPage");
             });
         }
 
-        private Models.Vehicle ToModel()
+        private Vehicle ToModel()
         {
             return new Models.Vehicle
             {

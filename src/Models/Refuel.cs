@@ -11,5 +11,7 @@
         public decimal PricePerLiter { get; set; }
 
         public int Mileage { get; set; }
+
+        public virtual Vehicle Vehicle { get; set; }
     }
 }

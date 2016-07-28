@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace MyDriving.Data
+namespace MyDriving.Core.Data
 {
     //TODO: Remove singleton due to issue with param less AppDbContext constructor
     class AppDbContext : DbContext

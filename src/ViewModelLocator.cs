@@ -3,7 +3,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using MyDriving.Models;
-using MyDriving.Repositories;
+using MyDriving.Core.Repositories;
 using MyDriving.ViewModels;
 using MyDriving.Views;
 

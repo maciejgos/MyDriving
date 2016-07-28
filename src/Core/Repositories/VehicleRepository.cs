@@ -1,10 +1,10 @@
-﻿using MyDriving.Data;
+﻿using MyDriving.Core.Data;
 using MyDriving.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyDriving.Repositories
+namespace MyDriving.Core.Repositories
 {
     class VehicleRepository : RepositoryBase, IRepository<Vehicle>
     {
@@ -24,16 +24,19 @@ namespace MyDriving.Repositories
         public void Add(Vehicle entity)
         {
             AppDbContext.Instance.Vehicles.Add(entity);
+            SaveAll();
         }
 
         public void Update(Vehicle entity)
         {
             AppDbContext.Instance.Vehicles.Update(entity);
+            SaveAll();
         }
 
         public void Delete(Vehicle entity)
         {
             AppDbContext.Instance.Vehicles.Remove(entity);
+            SaveAll();
         }
     }
 }

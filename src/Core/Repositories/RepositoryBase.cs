@@ -1,4 +1,4 @@
-﻿namespace MyDriving.Repositories
+﻿namespace MyDriving.Core.Repositories
 {
     class RepositoryBase
     {
