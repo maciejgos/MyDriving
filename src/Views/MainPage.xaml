@@ -6,16 +6,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    xmlns:model="using:MyDriving.Models">
-    <Page.Resources>
-        <CollectionViewSource x:Name="items" />
-    </Page.Resources>
+    xmlns:model="using:MyDriving.Models" 
+    DataContext="{Binding MainPageViewModel, Mode=OneWay, Source={StaticResource Locator}}">
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings" Click="SettingsButton_Click" />
+                <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings"/>
             </CommandBar.SecondaryCommands>
-            <AppBarButton x:Name="AddVehicle" Icon="Add" Label="Add vehicle" Click="AddVehicle_Click"/>
+            <AppBarButton x:Name="AddVehicle" Icon="Add" Label="Add vehicle" Command="{Binding AddVehicleCommand, Mode=OneWay}"/>
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -25,7 +23,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{x:Bind Vehicles}" Grid.Row="3" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
+        <ListView ItemsSource="{Binding MainPageViewModel.Vehicles}" Grid.Row="3" IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Vehicle">
                     <Grid Margin="10">

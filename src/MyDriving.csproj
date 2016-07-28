@@ -120,6 +120,7 @@
     <Compile Include="Repositories\VehicleRepository.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\CreateVechicleViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\AddFuellingPage.xaml.cs">
       <DependentUpon>AddFuellingPage.xaml</DependentUpon>
     </Compile>

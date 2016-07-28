@@ -22,35 +22,35 @@ namespace MyDriving.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        Repositories.VehicleRepository repository = new Repositories.VehicleRepository();
+        //Repositories.VehicleRepository repository = new Repositories.VehicleRepository();
 
-        public IEnumerable<Models.Vehicle> Vehicles
-        {
-            get
-            {
-                return repository.GetAll();
-            }
-        }
+        //public IEnumerable<Models.Vehicle> Vehicles
+        //{
+        //    get
+        //    {
+        //        return repository.GetAll();
+        //    }
+        //}
 
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        private void AddVehicle_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(CreateVehiclePage));
-        }
+        //private void AddVehicle_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Frame.Navigate(typeof(CreateVehiclePage));
+        //}
 
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var obj = e.ClickedItem as Models.Vehicle;
-            Frame.Navigate(typeof(VehicleDetailsPage), obj, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
-        }
+        //private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        //{
+        //    var obj = e.ClickedItem as Models.Vehicle;
+        //    Frame.Navigate(typeof(VehicleDetailsPage), obj, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
+        //}
 
-        private void SettingsButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

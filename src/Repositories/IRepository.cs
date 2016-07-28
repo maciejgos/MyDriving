@@ -4,12 +4,12 @@ using MyDriving.Models;
 
 namespace MyDriving.Repositories
 {
-    interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         void Add(T entity);
         void Delete(T entity);
         Vehicle Get(int id);
-        IEnumerable<T> GetAll(Func<T, bool> predicate);
+        IEnumerable<T> GetAll(Func<T, bool> predicate = null);
         void Update(T entity);
     }
 }
