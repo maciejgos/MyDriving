@@ -39,31 +39,31 @@ namespace MyDriving.Views
             }
         }
 
-        private async void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            //TODO: Validate input
-            var entity = new Models.Vehicle
-            {
-                Make = TextBoxMake.Text,
-                Model = TextBoxModel.Text,
-                ProductionYear = int.Parse(TextBoxAge.Text),
-                Mileage = int.Parse(TextBoxMileage.Text)
-            };
+        //private async void SaveButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //TODO: Validate input
+        //    var entity = new Models.Vehicle
+        //    {
+        //        Make = TextBoxMake.Text,
+        //        Model = TextBoxModel.Text,
+        //        ProductionYear = int.Parse(TextBoxAge.Text),
+        //        Mileage = int.Parse(TextBoxMileage.Text)
+        //    };
 
-            Data.AppDbContext.Instance.Vehicles.Add(entity);
-            await Data.AppDbContext.Instance.SaveChangesAsync();
+        //    Data.AppDbContext.Instance.Vehicles.Add(entity);
+        //    await Data.AppDbContext.Instance.SaveChangesAsync();
 
-            Frame.GoBack();
-        }
+        //    Frame.GoBack();
+        //}
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.GoBack();
-        }
+        //private void CancelButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Frame.GoBack();
+        //}
 
-        private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

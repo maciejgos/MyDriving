@@ -4,8 +4,8 @@
     xmlns:local="using:MyDriving.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ViewModels="using:MyDriving.ViewModels"
     x:Class="MyDriving.Views.CreateVehiclePage"
+    DataContext="{Binding CreateVehicleViewModel, Source={StaticResource Locator}}"
     mc:Ignorable="d">
     <Page.Resources>
         <Style x:Key="AddPhotoButtonStyle" TargetType="Button">
@@ -66,13 +66,10 @@
     </Page.Resources>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:Name="SaveButton" Icon="Save" Label="Save" Click="SaveButton_Click" />
-            <AppBarButton x:Name="CancelButton" Icon="Cancel" Label="Cancel" Click="CancelButton_Click"/>
+            <AppBarButton x:Name="SaveButton" Icon="Save" Label="Save" Command="{Binding SaveCommand, Mode=OneWay}" />
+            <AppBarButton x:Name="CancelButton" Icon="Cancel" Label="Cancel" Command="{Binding CancelCommand, Mode=OneWay}" />
         </CommandBar>
     </Page.BottomAppBar>
-    <Page.DataContext>
-        <ViewModels:CreateVechicleViewModel/>
-    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -80,7 +77,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="NEW VECHICLE" FontSize="{ThemeResource TextStyleLargeFontSize}" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <Button x:Name="AddPhotoButton" Content="Add photo" Grid.Row="1" Style="{StaticResource AddPhotoButtonStyle}" Margin="10,10,0,10" Click="AddPhotoButton_Click"/>
+        <Button x:Name="AddPhotoButton" Content="Add photo" Grid.Row="1" Style="{StaticResource AddPhotoButtonStyle}" Margin="10,10,0,10" Command="{Binding AddPhotoCommand, Mode=OneWay}"/>
         <Ellipse Grid.Row="1" Stroke="White" Width="120" Height="120" HorizontalAlignment="Left" Margin="10,10,0,10" d:IsHidden="True"/>
         <ScrollViewer Grid.Row="2" Margin="10">
             <Grid>
