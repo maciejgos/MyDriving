@@ -98,9 +98,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Core\Calculators\CalculationEngine.cs" />
+    <Compile Include="Core\Calculators\FuelConsumptionCalculationEngine.cs" />
     <Compile Include="Core\Calculators\ICalculation.cs" />
     <Compile Include="Core\Data\AppDbContext.cs" />
+    <Compile Include="Extensions\NavigationServiceExtension.cs" />
     <Compile Include="Migrations\20160627161647_InitialMigration.cs" />
     <Compile Include="Migrations\20160627161647_InitialMigration.designer.cs">
       <DependentUpon>20160627161647_InitialMigration.cs</DependentUpon>
@@ -119,6 +120,7 @@
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Core\Repositories\RepositoryBase.cs" />
     <Compile Include="Core\Repositories\VehicleRepository.cs" />
+    <Compile Include="Routes.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\CreateVechicleViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />

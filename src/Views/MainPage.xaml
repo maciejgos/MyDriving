@@ -23,7 +23,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding MainPageViewModel.Vehicles}" Grid.Row="3" IsItemClickEnabled="True">
+        <ListView ItemsSource="{Binding Vehicles}" Grid.Row="3" IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Vehicle">
                     <Grid Margin="10">

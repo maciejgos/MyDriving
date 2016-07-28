@@ -12,7 +12,14 @@ namespace MyDriving.ViewModels
         private readonly IRepository<Vehicle> _repository;
         private readonly INavigationService _navigationService;
 
-        public ObservableCollection<Vehicle> Vehicles { get; }
+        public ObservableCollection<Vehicle> Vehicles
+        {
+            get
+            {
+                var result = _repository.GetAll();
+                return new ObservableCollection<Vehicle>(result);
+            }
+        }
 
         public RelayCommand AddVehicleCommand { get; }
 
@@ -20,9 +27,6 @@ namespace MyDriving.ViewModels
         {
             _navigationService = navigationService;
             _repository = repository;
-
-            var result = _repository.GetAll();
-            Vehicles = Vehicles ?? new ObservableCollection<Vehicle>(result);
 
             AddVehicleCommand = AddVehicleCommand ?? new RelayCommand(() => _navigationService.NavigateTo("CreateVehiclePage"));
         }
