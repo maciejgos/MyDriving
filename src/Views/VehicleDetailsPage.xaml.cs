@@ -23,60 +23,60 @@ namespace MyDriving.Views
     /// </summary>
     public sealed partial class VehicleDetailsPage : Page
     {
-        Models.Vehicle model;
+        //Models.Vehicle model;
 
-        public IEnumerable<Models.Refuel> Fuellings
-        {
-            get
-            {
-                return model.Fuellings;
-            }
-        }
+        //public IEnumerable<Models.Refuel> Fuellings
+        //{
+        //    get
+        //    {
+        //        return model.Fuellings;
+        //    }
+        //}
 
         public VehicleDetailsPage()
         {
             this.InitializeComponent();
 
-            SystemNavigationManager.GetForCurrentView().BackRequested += DetailsPage_BackRequested;
+            //SystemNavigationManager.GetForCurrentView().BackRequested += DetailsPage_BackRequested;
 
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            model = e.Parameter as Models.Vehicle;
-            var dialog = new Windows.UI.Popups.MessageDialog($"{model.Make} {model.Model}").ShowAsync();
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+        //    model = e.Parameter as Models.Vehicle;
+        //    var dialog = new Windows.UI.Popups.MessageDialog($"{model.Make} {model.Model}").ShowAsync();
 
-            base.OnNavigatedTo(e);
-        }
+        //    base.OnNavigatedTo(e);
+        //}
 
-        private void DetailsPage_BackRequested(object sender, BackRequestedEventArgs e)
-        {
-            Frame frame = Window.Current.Content as Frame;
-            if (frame.CanGoBack)
-            {
-                frame.GoBack();
-                e.Handled = true;
-            }
-        }
+        //private void DetailsPage_BackRequested(object sender, BackRequestedEventArgs e)
+        //{
+        //    Frame frame = Window.Current.Content as Frame;
+        //    if (frame.CanGoBack)
+        //    {
+        //        frame.GoBack();
+        //        e.Handled = true;
+        //    }
+        //}
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void SaveButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void CancelButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        private void AddFullingButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(AddFuellingPage), model);
-        }
+        //private void AddFullingButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Frame.Navigate(typeof(AddFuellingPage), model);
+        //}
 
-        private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
-        {
+        //private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
     }
 }

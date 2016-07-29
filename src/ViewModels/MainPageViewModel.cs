@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using MyDriving.Core.Repositories;
 using MyDriving.Models;
@@ -37,7 +38,10 @@ namespace MyDriving.ViewModels
 
             ShowDetailsPageCommand = ShowDetailsPageCommand ?? new RelayCommand(() =>
             {
-                _navigationService.NavigateTo(Routes.VehicleDetailsPage, SelectedItem);
+                var message = new NotificationMessage<Vehicle>(SelectedItem, string.Empty);
+
+                Messenger.Default.Send(message, Tokens.VehicleNotificationMessage);
+                _navigationService.NavigateTo(Routes.VehicleDetailsPage);
             });
 
             SettingsCommand = SettingsCommand ?? new RelayCommand(() => { throw new System.NotImplementedException(); });
