@@ -11,7 +11,7 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings"/>
+                <AppBarButton x:Name="SettingsButton" Icon="Setting" Label="Settings" Command="{Binding SettingsCommand, Mode=OneWay}"/>
             </CommandBar.SecondaryCommands>
             <AppBarButton x:Name="AddVehicle" Icon="Add" Label="Add vehicle" Command="{Binding AddVehicleCommand, Mode=OneWay}"/>
         </CommandBar>
@@ -23,7 +23,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding Vehicles}" Grid.Row="3" IsItemClickEnabled="True">
+        <ListView ItemsSource="{Binding Vehicles}" Grid.Row="3" IsItemClickEnabled="True" ItemClick="ListView_ItemClick">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Vehicle">
                     <Grid Margin="10">

@@ -3,7 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using MyDriving.Core.Repositories;
 using MyDriving.Models;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace MyDriving.ViewModels
 {
@@ -12,23 +12,35 @@ namespace MyDriving.ViewModels
         private readonly IRepository<Vehicle> _repository;
         private readonly INavigationService _navigationService;
 
-        public ObservableCollection<Vehicle> Vehicles
+        public IEnumerable<Vehicle> Vehicles
         {
             get
             {
-                var result = _repository.GetAll();
-                return new ObservableCollection<Vehicle>(result);
+                return _repository.GetAll();
             }
         }
 
+        public Vehicle SelectedItem { get; set; }
+
         public RelayCommand AddVehicleCommand { get; }
+
+        public RelayCommand ShowDetailsPageCommand { get; }
+
+        public RelayCommand SettingsCommand { get; }
 
         public MainPageViewModel(INavigationService navigationService, IRepository<Vehicle> repository)
         {
             _navigationService = navigationService;
             _repository = repository;
 
-            AddVehicleCommand = AddVehicleCommand ?? new RelayCommand(() => _navigationService.NavigateTo("CreateVehiclePage"));
+            AddVehicleCommand = AddVehicleCommand ?? new RelayCommand(() => _navigationService.NavigateTo(Routes.CreateVehiclePage));
+
+            ShowDetailsPageCommand = ShowDetailsPageCommand ?? new RelayCommand(() =>
+            {
+                _navigationService.NavigateTo(Routes.VehicleDetailsPage, SelectedItem);
+            });
+
+            SettingsCommand = SettingsCommand ?? new RelayCommand(() => { throw new System.NotImplementedException(); });
         }
     }
 }
