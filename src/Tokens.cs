@@ -1,8 +1,4 @@
-﻿using System;
-using GalaSoft.MvvmLight.Messaging;
-using MyDriving.Models;
-
-namespace MyDriving.ViewModels
+﻿namespace MyDriving.ViewModels
 {
     class Tokens
     {

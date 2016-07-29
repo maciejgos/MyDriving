@@ -28,6 +28,14 @@ namespace MyDriving
             }
         }
 
+        public VehicleDetailsPageViewModel VehicleDetailsPageViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<VehicleDetailsPageViewModel>();
+            }
+        }
+
         static ViewModelLocator()
         {
             var navigationService = new NavigationService();
@@ -41,6 +49,7 @@ namespace MyDriving
 
             SimpleIoc.Default.Register<CreateVechicleViewModel>();
             SimpleIoc.Default.Register<MainPageViewModel>();
+            SimpleIoc.Default.Register<VehicleDetailsPageViewModel>();
         }
     }
 }

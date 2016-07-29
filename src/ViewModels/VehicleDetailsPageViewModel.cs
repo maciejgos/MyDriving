@@ -15,6 +15,8 @@ namespace MyDriving.ViewModels
 
         public Vehicle Vehicle { get; set; }
 
+        public RelayCommand ChangePhotoCommand { get; }
+
         public RelayCommand SaveCommand { get; }
 
         public RelayCommand RefuelCommand { get; }
@@ -26,6 +28,7 @@ namespace MyDriving.ViewModels
             _navigationService = navigationService;
             _repository = repository;
 
+            ChangePhotoCommand = new RelayCommand(OnChangePhotoCommand);
             SaveCommand = new RelayCommand(OnSaveCommand);
             RefuelCommand = new RelayCommand(OnRefuelCommand);
             CancelCommand = new RelayCommand(OnCancelCommand);
@@ -46,6 +49,11 @@ namespace MyDriving.ViewModels
         }
 
         private void OnRefuelCommand()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void OnChangePhotoCommand()
         {
             throw new NotImplementedException();
         }
