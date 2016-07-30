@@ -1,11 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GalaSoft.MvvmLight.Views;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Practices.ServiceLocation;
 using MyDriving.Core.Data;
+using MyDriving.Core.Repositories;
+using MyDriving.Models;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using System.Linq;
 
 namespace MyDriving
 {
@@ -68,7 +73,25 @@ namespace MyDriving
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(Views.MainPage), e.Arguments);
+
+                    var navigationService = ServiceLocator.Current.GetInstance<INavigationService>();
+                    var repository = ServiceLocator.Current.GetInstance<IRepository<Vehicle>>();
+
+                    var items = repository.GetAll();
+
+                    if (items.Count() == 0)
+                    {
+                        navigationService.NavigateTo(Routes.CreateVehiclePage);
+                    }
+
+                    var vehicle = items.SingleOrDefault(entity => entity.IsDefault);
+
+                    if (vehicle == null || vehicle.IsDefault == false)
+                        navigationService.NavigateTo(Routes.MainPage);
+                    else
+                        navigationService.NavigateTo(Routes.VehicleDetailsPage, vehicle);
+
+                    //rootFrame.Navigate(typeof(Views.MainPage), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
