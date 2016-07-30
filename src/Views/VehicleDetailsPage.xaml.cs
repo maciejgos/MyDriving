@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using MyDriving.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -37,8 +39,15 @@ namespace MyDriving.Views
         {
             this.InitializeComponent();
 
-            //SystemNavigationManager.GetForCurrentView().BackRequested += DetailsPage_BackRequested;
+            SystemNavigationManager.GetForCurrentView().BackRequested += DetailsPage_BackRequested;
+        }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var vm = ServiceLocator.Current.GetInstance<VehicleDetailsPageViewModel>();
+            vm.Vehicle = e.Parameter as Models.Vehicle;
+
+            base.OnNavigatedTo(e);
         }
 
         //protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -49,15 +58,15 @@ namespace MyDriving.Views
         //    base.OnNavigatedTo(e);
         //}
 
-        //private void DetailsPage_BackRequested(object sender, BackRequestedEventArgs e)
-        //{
-        //    Frame frame = Window.Current.Content as Frame;
-        //    if (frame.CanGoBack)
-        //    {
-        //        frame.GoBack();
-        //        e.Handled = true;
-        //    }
-        //}
+        private void DetailsPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame frame = Window.Current.Content as Frame;
+            if (frame.CanGoBack)
+            {
+                frame.GoBack();
+                e.Handled = true;
+            }
+        }
 
         //private void SaveButton_Click(object sender, RoutedEventArgs e)
         //{
