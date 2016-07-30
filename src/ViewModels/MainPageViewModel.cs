@@ -1,10 +1,10 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using MyDriving.Core.Repositories;
 using MyDriving.Models;
 using System.Collections.Generic;
+using System;
 
 namespace MyDriving.ViewModels
 {
@@ -21,11 +21,9 @@ namespace MyDriving.ViewModels
             }
         }
 
-        public Vehicle SelectedItem { get; set; }
-
         public RelayCommand AddVehicleCommand { get; }
 
-        public RelayCommand ShowDetailsPageCommand { get; }
+        public RelayCommand<Vehicle> ShowDetailsPageCommand { get; }
 
         public RelayCommand SettingsCommand { get; }
 
@@ -34,17 +32,24 @@ namespace MyDriving.ViewModels
             _navigationService = navigationService;
             _repository = repository;
 
-            AddVehicleCommand = AddVehicleCommand ?? new RelayCommand(() => _navigationService.NavigateTo(Routes.CreateVehiclePage));
+            AddVehicleCommand = new RelayCommand(OnAddVehicleCommand);
+            ShowDetailsPageCommand = new RelayCommand<Vehicle>(OnShowDetailsCommand);
+            SettingsCommand = new RelayCommand(OnSettingsCommand);
+        }
 
-            ShowDetailsPageCommand = ShowDetailsPageCommand ?? new RelayCommand(() =>
-            {
-                var message = new NotificationMessage<Vehicle>(SelectedItem, string.Empty);
+        private void OnSettingsCommand()
+        {
+            throw new NotImplementedException();
+        }
 
-                Messenger.Default.Send(message, Tokens.VehicleNotificationMessage);
-                _navigationService.NavigateTo(Routes.VehicleDetailsPage);
-            });
+        private void OnShowDetailsCommand(Vehicle vehicle)
+        {
+            _navigationService.NavigateTo(Routes.VehicleDetailsPage, vehicle);
+        }
 
-            SettingsCommand = SettingsCommand ?? new RelayCommand(() => { throw new System.NotImplementedException(); });
+        private void OnAddVehicleCommand()
+        {
+            _navigationService.NavigateTo(Routes.CreateVehiclePage);
         }
     }
 }
