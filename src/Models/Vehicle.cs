@@ -19,6 +19,8 @@ namespace MyDriving.Models
 
         public int Mileage { get; set; }
 
+        public bool IsDefault { get; set; }
+
         public virtual ICollection<Refuel> Fuellings { get; set; }
 
         public decimal AverageFuelConsumption

@@ -11,14 +11,15 @@ namespace MyDriving.ViewModels
     {
         private readonly IRepository<Vehicle> _repository;
         private readonly INavigationService _navigationService;
+        private readonly Vehicle _entity;
 
-        public string Make { get; set; }
-
-        public string Model { get; set; }
-
-        public int YearOfManufacture { get; set; }
-
-        public int Mileage { get; set; }
+        public Vehicle Vehicle
+        {
+            get
+            {
+                return _entity;
+            }
+        }
 
         public RelayCommand AddPhotoCommand { get; }
 
@@ -30,39 +31,27 @@ namespace MyDriving.ViewModels
         {
             _navigationService = navigationService;
             _repository = repository;
+            _entity = new Vehicle();
 
-            AddPhotoCommand = new RelayCommand(() => 
-            {
-                //TODO: Add proper implementation for camera handling
-                throw new NotImplementedException();
-            });
-
-            CancelCommand = new RelayCommand(() => 
-            {
-                //TODO: Use NavigationService to navigate back to prev page
-                navigationService.NavigateTo("MainPage");
-            });
-
-            SaveCommand = new RelayCommand(() => 
-            {
-                var entity = ToModel();
-
-                _repository.Add(entity);
-
-                //TODO: Navigate to main page when save is success
-                navigationService.NavigateTo("MainPage");
-            });
+            AddPhotoCommand = new RelayCommand(OnAddPhotoCommand);
+            SaveCommand = new RelayCommand(OnSaveCommand);
+            CancelCommand = new RelayCommand(OnCancelCommand);
         }
 
-        private Vehicle ToModel()
+        private void OnCancelCommand()
         {
-            return new Vehicle
-            {
-                Make = this.Make,
-                Model = this.Model,
-                ProductionYear = this.YearOfManufacture,
-                Mileage = this.Mileage
-            };
+            _navigationService.NavigateTo(Routes.MainPage);
+        }
+
+        private void OnSaveCommand()
+        {
+            _repository.Add(_entity);
+            _navigationService.NavigateTo(Routes.MainPage);
+        }
+
+        private void OnAddPhotoCommand()
+        {
+            throw new NotImplementedException();
         }
     }
 }

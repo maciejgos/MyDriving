@@ -114,6 +114,10 @@
     <Compile Include="Migrations\20160711182625_AddMileageFieldMigration.designer.cs">
       <DependentUpon>20160711182625_AddMileageFieldMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20160730141428_IsDefaultVehicle.cs" />
+    <Compile Include="Migrations\20160730141428_IsDefaultVehicle.designer.cs">
+      <DependentUpon>20160730141428_IsDefaultVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Refuel.cs" />
     <Compile Include="Models\Vehicle.cs" />
