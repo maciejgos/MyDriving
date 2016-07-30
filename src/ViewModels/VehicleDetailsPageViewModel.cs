@@ -32,15 +32,6 @@ namespace MyDriving.ViewModels
             SaveCommand = new RelayCommand(OnSaveCommand);
             RefuelCommand = new RelayCommand(OnRefuelCommand);
             CancelCommand = new RelayCommand(OnCancelCommand);
-
-            Messenger.Default.Register<NotificationMessage<Vehicle>>(this, Tokens.VehicleNotificationMessage, OnNotificationReceive);
-        }
-
-        private void OnNotificationReceive(NotificationMessage<Vehicle> message)
-        {
-            if (message == null || message.Content == null)
-                throw new InvalidOperationException("Notification message or it's content cannot be null.");
-            Vehicle = message?.Content;
         }
 
         private void OnCancelCommand()
