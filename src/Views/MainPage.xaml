@@ -35,6 +35,10 @@
                         <StackPanel Grid.Column="2" Margin="10, 0,0,0">
                             <TextBlock Text="{x:Bind Make}" FontWeight="Bold" />
                             <TextBlock Text="{x:Bind Model}" />
+                            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                <TextBlock Text="Average consumption" />
+                                <TextBlock Margin="10,0,0,0" Text="{x:Bind AverageFuelConsumption}"/>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
