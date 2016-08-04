@@ -10,6 +10,7 @@ namespace MyDriving.Extensions
             service.Configure(Routes.MainPage, typeof(MainPage));
             service.Configure(Routes.CreateVehiclePage, typeof(CreateVehiclePage));
             service.Configure(Routes.VehicleDetailsPage, typeof(VehicleDetailsPage));
+            service.Configure(Routes.RefuelPage, typeof(AddFuellingPage));
         }
     }
 }

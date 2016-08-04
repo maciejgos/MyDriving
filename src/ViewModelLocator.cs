@@ -36,6 +36,14 @@ namespace MyDriving
             }
         }
 
+        public RefuelPageViewModel RefuelPageViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<RefuelPageViewModel>();
+            }
+        }
+
         static ViewModelLocator()
         {
             var navigationService = new NavigationService();
@@ -50,6 +58,7 @@ namespace MyDriving
             SimpleIoc.Default.Register<CreateVechicleViewModel>();
             SimpleIoc.Default.Register<MainPageViewModel>();
             SimpleIoc.Default.Register<VehicleDetailsPageViewModel>();
+            SimpleIoc.Default.Register<RefuelPageViewModel>();
         }
     }
 }

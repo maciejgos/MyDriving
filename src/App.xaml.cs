@@ -84,7 +84,8 @@ namespace MyDriving
                         navigationService.NavigateTo(Routes.CreateVehiclePage);
                     }
 
-                    var vehicle = items.SingleOrDefault(entity => entity.IsDefault);
+                    var id = items.SingleOrDefault(entity => entity.IsDefault).Id;
+                    var vehicle = repository.Get(id);
 
                     if (vehicle == null || vehicle.IsDefault == false)
                         navigationService.NavigateTo(Routes.MainPage);

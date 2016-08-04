@@ -20,7 +20,6 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <ListView ItemsSource="{Binding Vehicles}" Grid.Row="3" IsItemClickEnabled="True" ItemClick="ListView_ItemClick">
@@ -45,6 +44,5 @@
             </ListView.ItemTemplate>
         </ListView>
         <TextBlock TextWrapping="Wrap" Text="Vehicles" Margin="10"/>
-        <TextBox Grid.Row="1" TextWrapping="Wrap" Text="" Margin="10" PlaceholderText="Search"/>
     </Grid>
 </Page>

@@ -69,7 +69,7 @@
     </Page.DataContext>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:Name="AddFullingButton" Icon="Add" Label="Refuel" Command="{Binding RefuelCommand, Mode=OneWay}" />
+            <AppBarButton x:Name="AddFullingButton" Icon="Add" Label="Refuel" Command="{Binding RefuelCommand, Mode=OneWay}" CommandParameter="{Binding Vehicle}" />
             <AppBarButton x:Name="SaveButton" Icon="Save" Label="Save" Command="{Binding SaveCommand, Mode=OneWay}" />
             <AppBarButton x:Name="CancelButton" Icon="Cancel" Label="Cancel" Command="{Binding CancelCommand, Mode=OneWay}" />
         </CommandBar>
