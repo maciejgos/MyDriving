@@ -19,7 +19,7 @@ namespace MyDriving.ViewModels
 
         public RelayCommand SaveCommand { get; }
 
-        public RelayCommand RefuelCommand { get; }
+        public RelayCommand<Vehicle> RefuelCommand { get; }
 
         public RelayCommand CancelCommand { get; }
 
@@ -30,7 +30,7 @@ namespace MyDriving.ViewModels
 
             ChangePhotoCommand = new RelayCommand(OnChangePhotoCommand);
             SaveCommand = new RelayCommand(OnSaveCommand);
-            RefuelCommand = new RelayCommand(OnRefuelCommand);
+            RefuelCommand = new RelayCommand<Vehicle>(OnRefuelCommand);
             CancelCommand = new RelayCommand(OnCancelCommand);
         }
 
@@ -39,9 +39,9 @@ namespace MyDriving.ViewModels
             _navigationService.NavigateTo(Routes.MainPage);
         }
 
-        private void OnRefuelCommand()
+        private void OnRefuelCommand(Vehicle model)
         {
-            throw new NotImplementedException();
+            _navigationService.NavigateTo(Routes.RefuelPage, model);
         }
 
         private void OnChangePhotoCommand()

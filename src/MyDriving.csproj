@@ -129,6 +129,7 @@
     <Compile Include="ViewModels\CreateVechicleViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Tokens.cs" />
+    <Compile Include="ViewModels\RefuelPageViewModel.cs" />
     <Compile Include="ViewModels\VehicleDetailsPageViewModel.cs" />
     <Compile Include="Views\AddFuellingPage.xaml.cs">
       <DependentUpon>AddFuellingPage.xaml</DependentUpon>
