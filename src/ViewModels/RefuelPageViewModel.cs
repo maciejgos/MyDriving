@@ -37,21 +37,24 @@ namespace MyDriving.ViewModels
 
         private void OnSaveCommand()
         {
-            Refuel refuel = MapToModel();
-            Vehicle.Fuellings.Add(refuel);
+            var vehicle = _repository.Get(Vehicle.Id);
 
-            _repository.Update(Vehicle);
+            Refuel refuel = MapToModel(vehicle);
+            vehicle.Fuellings.Add(refuel);
+
+            _repository.Update(vehicle);
             _navigationService.GoBack();
         }
 
-        private Refuel MapToModel()
+        private Refuel MapToModel(Vehicle vehicle)
         {
             return new Refuel
             {
                 Liters = Liters,
                 Mileage = Mileage,
                 Price = Price,
-                PricePerLiter = Math.Round(Price / Liters, 2)
+                PricePerLiter = Math.Round(Price / Liters, 2),
+                Vehicle = vehicle
             };
         }
     }

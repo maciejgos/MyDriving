@@ -1,4 +1,5 @@
-﻿using MyDriving.Core.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using MyDriving.Core.Data;
 using MyDriving.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,9 @@ namespace MyDriving.Core.Repositories
     {
         public Vehicle Get(int id)
         {
-            return AppDbContext.Instance.Vehicles.FirstOrDefault(v => v.Id == id);
+            return AppDbContext.Instance.Vehicles
+                .Include(v => v.Fuellings)
+                .FirstOrDefault(v => v.Id == id);
         }
 
         public IEnumerable<Vehicle> GetAll(Func<Vehicle,bool> predicate = null)
