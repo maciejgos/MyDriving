@@ -31,6 +31,7 @@ namespace MyDriving
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            UnhandledException += App_UnhandledException;
         }
 
         /// <summary>
@@ -102,6 +103,24 @@ namespace MyDriving
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        /// <summary>
+        /// Invoked when unhandled exception occurs.
+        /// </summary>
+        /// <param name="sender">The source of the unhandled exception.</param>
+        /// <param name="e">Details about the unhandled exception.</param>
+        private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            if (e.Exception is NotImplementedException)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Feature not implemented yet.").ShowAsync();
+                e.Handled = true;
+            }
+            else
+            {
+                throw e.Exception;
+            }
         }
     }
 }
