@@ -26,5 +26,10 @@ namespace MyDriving.Views
         {
             this.InitializeComponent();
         }
+
+        private void OnNavigatedToPage(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

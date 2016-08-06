@@ -7,7 +7,43 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <SplitView x:Name="rootSplitView"
+                   DisplayMode="Inline"
+                   OpenPaneLength="256"
+                   IsTabStop="False">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="1" BorderThickness="0,1,0,0">
+                    </Border>
 
+                </Grid>
+            </SplitView.Pane>
+
+            <Frame x:Name="frame" Navigated="OnNavigatedToPage">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <EntranceNavigationTransitionInfo />
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </SplitView>
+
+        <ToggleButton x:Name="togglePaneButton"
+                      TabIndex="1"
+                      Foreground="Black"
+                      Background="White"
+                      Style="{StaticResource SplitViewTogglePaneButtonStyle}"
+                      AutomationProperties.Name="Menu"
+                      ToolTipService.ToolTip="Menu" />
     </Grid>
 </Page>
