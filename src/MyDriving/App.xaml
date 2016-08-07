@@ -7,12 +7,10 @@
 
     <Application.Resources>
         <ResourceDictionary>
-
+            <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:MyDriving.Core" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
         </ResourceDictionary>
     </Application.Resources>
-
 </Application>

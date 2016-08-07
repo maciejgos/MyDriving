@@ -44,6 +44,9 @@
                       Background="White"
                       Style="{StaticResource SplitViewTogglePaneButtonStyle}"
                       AutomationProperties.Name="Menu"
-                      ToolTipService.ToolTip="Menu" />
+                      ToolTipService.ToolTip="Menu" Checked="togglePaneButton_Checked" />
+
+        <!--IsChecked="{Binding IsPaneOpen, ElementName=rootSplitView, Mode=TwoWay}"
+                      Unchecked="TogglePaneButton_Checked"-->
     </Grid>
 </Page>

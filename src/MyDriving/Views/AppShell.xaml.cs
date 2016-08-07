@@ -22,6 +22,14 @@ namespace MyDriving.Views
     /// </summary>
     public sealed partial class AppShell : Page
     {
+        public Frame AppFrame
+        {
+            get
+            {
+                return frame;
+            }
+        }
+
         public AppShell()
         {
             this.InitializeComponent();
@@ -30,6 +38,11 @@ namespace MyDriving.Views
         private void OnNavigatedToPage(object sender, NavigationEventArgs e)
         {
 
+        }
+
+        private void togglePaneButton_Checked(object sender, RoutedEventArgs e)
+        {
+            rootSplitView.IsPaneOpen = !rootSplitView.IsPaneOpen;
         }
     }
 }
