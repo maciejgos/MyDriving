@@ -14,11 +14,20 @@ namespace MyDriving.Core
             }
         }
 
+        public ProfilePageViewModel ProfilePageViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ProfilePageViewModel>();
+            }
+        }
+
         static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<AppShellViewModel>();
+            SimpleIoc.Default.Register<ProfilePageViewModel>();
         }
     }
 }
